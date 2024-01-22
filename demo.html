@@ -1,0 +1,9 @@
+<button>download</button>
+
+<script type="module">
+  import { save_txt } from './index.js'
+
+  document.querySelector('button').onclick = () =>
+    save_txt('test, this is PPz \n haha.', 'text.txt')
+
+</script>
