@@ -1,9 +1,21 @@
-<button>download</button>
+<button id="txt">.txt</button>
+<button id="csv">.csv</button>
 
 <script type="module">
-  import { save_txt } from './index.js'
+  import { save_txt, save_csv } from './index.js' // 原来这里不能用“反单引号”
 
-  document.querySelector('button').onclick = () =>
-    save_txt('test, this is PPz \n haha.', 'text.txt')
+  const get_btn = id => document.getElementById(id)
 
+  get_btn(`txt`).onclick = () =>
+    save_txt(`test, this is PPz \n haha.`, `text.txt`)
+
+  get_btn(`csv`).onclick = () =>
+    save_csv({
+      filename: `文件名.csv`,
+      columns: [`header1`, `header2'`, `header3"`, `header4,`, `,"""'\``], // 可选
+      records: [
+        [1,2,3,4,5],
+        [`value1`, `value2'`, `value3"`, `value4,`, `,"""'\``],
+      ],
+    })
 </script>
