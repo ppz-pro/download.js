@@ -16,7 +16,7 @@ function save(content, filename) {
  * @param {string} filename - name of the file
 */
 export
-function save_txt (content, filename) {
+function export_txt (content, filename) {
   save(new Blob([content]), filename)
 }
 
@@ -36,7 +36,7 @@ class Error_csv extends Error {
  * }} options
  */
 export
-function save_csv({
+function export_csv({
   columns,
   records,
   filename,
@@ -69,5 +69,5 @@ function save_csv({
       record => record.map(Item).join(',')
     )
   )
-  save_txt(list.join('\n'), filename)
+  export_txt(list.join('\n'), filename)
 }

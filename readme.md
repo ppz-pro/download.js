@@ -1,19 +1,19 @@
-# @ppzp/download
+# @ppzp/export
 
 下载文件
 
 ``` bash
-npm install @ppzp/download
+npm install @ppzp/export
 ```
 
 ``` js
-import { save_txt, save_csv } from '@ppzp/download'
+import { export_txt, export_csv } from '@ppzp/export'
 
 // 下载 .txt 文件
-save_txt('文件内容', '文件名.txt')
+export_txt('文件内容', '文件名.txt')
 
 // 下载 .csv 文件
-save_csv({
+export_csv({
   filename: `文件名.csv`,
   columns: [`header1`, `header2'`, `header3"`, `header4,`, `,"""'\``], // 可选
   records: [

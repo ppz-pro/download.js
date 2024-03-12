@@ -2,15 +2,15 @@
 <button id="csv">.csv</button>
 
 <script type="module">
-  import { save_txt, save_csv } from './index.js' // 原来这里不能用“反单引号”
+  import { export_txt, export_csv } from './index.js' // 原来这里不能用“反单引号”
 
   const get_btn = id => document.getElementById(id)
 
   get_btn(`txt`).onclick = () =>
-    save_txt(`test, this is PPz \n haha.`, `text.txt`)
+    export_txt(`test, this is PPz \n haha.`, `text.txt`)
 
   get_btn(`csv`).onclick = () =>
-    save_csv({
+    export_csv({
       filename: `文件名.csv`,
       columns: [`header1`, `header2'`, `header3"`, `header4,`, `,"""'\``], // 可选
       records: [
