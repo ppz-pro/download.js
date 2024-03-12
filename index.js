@@ -27,10 +27,9 @@ class Error_csv extends Error {
 }
 
 /** download csv file
- * @template Record
  * @param {{
  *    columns?: string[],
- *    records: Record[][],
+ *    records: any[][],
  *    filename: string,
  *    skip_validate?: boolean,
  * }} options
